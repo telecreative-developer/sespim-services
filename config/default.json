@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mysql": "mysql://root:@localhost:3306/sespim",
+  "authentication": {
+    "secret": "00007c805a256652751543fb2acffdbfef9e3c00c42fded93dd73c09661adc398f98954bb1aa8f51b580c2bb9df8b7bd31096a433a98f45df09c427fb72ad40663f6e4c1377c262e3a59602bb4607a4fee0f7408954d7777ac385804be50d99d7c4027bbfb27aca02db3c415ab056b55a99dd623626472859346e4091cf94ccb612ade73133e24df522869e5c880dbf701e54cedfcab1f0cc7e73a1a8eaedd41349271265f74111acf34a317fce1bad879e92e44cbc87b8124dd0b24a94ea1c2935c276c3905e17ae5f5a41fe918261b6506761ec3a5c0db3b60bb952613a2d0e6509cf013b822764e95c773f3464f0105d18888e0d1b459e8726750e6dea627",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
+}
