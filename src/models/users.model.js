@@ -6,13 +6,13 @@ const DataTypes = Sequelize.DataTypes;
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const users = sequelizeClient.define('users', {
-    firt_name: {
+    first_name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
@@ -28,7 +28,7 @@ module.exports = function (app) {
     },
     bod: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: true
     },
     bop: {
       type: DataTypes.STRING,
@@ -40,6 +40,10 @@ module.exports = function (app) {
     },
     avatar_url: {
       type: DataTypes.STRING,
+      allowNull: true
+    },
+    force_of: {
+      type: DataTypes.INTEGER,
       allowNull: true
     }
   }, {
