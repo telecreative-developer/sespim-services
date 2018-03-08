@@ -3,12 +3,11 @@
 
 // eslint-disable-next-line no-unused-vars
 module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
-  return function relationshipPostComments (hook) {
+  return function relationshipNotifications (hook) {
     // Hooks can either return nothing or a promise
     hook.params.sequelize = {
       raw: false,
       include: [
-        hook.app.services.posts.Model,
         hook.app.services.users.Model
       ]
     };
