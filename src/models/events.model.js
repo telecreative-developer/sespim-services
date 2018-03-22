@@ -17,19 +17,31 @@ module.exports = function (app) {
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: false
+    },
+    place: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     date: {
-      type: DataTypes.DATE,
-      allowNull: true
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    time_start: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    time_end: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     admin_id: {
-      type: DataTypes.TEXT,
-      allowNull: true
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {
     hooks: {

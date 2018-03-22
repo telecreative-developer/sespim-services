@@ -17,11 +17,11 @@ module.exports = function (app) {
     },
     content: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     myid: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     post_id: {
       type: DataTypes.INTEGER,
@@ -37,7 +37,7 @@ module.exports = function (app) {
     },
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     }
   }, {
     hooks: {
@@ -51,6 +51,9 @@ module.exports = function (app) {
   notifications.associate = function (models) {
     // Define associations here
     notifications.hasMany(models.users, {foreignKey: 'id', sourceKey: 'id'});
+    notifications.hasMany(models.posts, {foreignKey: 'post_id', sourceKey: 'post_id'});
+    notifications.hasMany(models.events, {foreignKey: 'event_id', sourceKey: 'event_id'});
+    notifications.hasMany(models.scores, {foreignKey: 'score_id', sourceKey: 'score_id'});
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
