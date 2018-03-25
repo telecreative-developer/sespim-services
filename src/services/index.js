@@ -1,6 +1,5 @@
 const users = require('./users/users.service.js');
 const events = require('./events/events.service.js');
-const articles = require('./articles/articles.service.js');
 const posts = require('./posts/posts.service.js');
 const postComments = require('./post-comments/post-comments.service.js');
 const scores = require('./scores/scores.service.js');
@@ -9,11 +8,15 @@ const uploadAvatarUser = require('./upload-avatar-user/upload-avatar-user.servic
 const uploadImagePost = require('./upload-image-post/upload-image-post.service.js');
 const notifications = require('./notifications/notifications.service.js');
 const onesignal = require('./onesignal/onesignal.service.js');
+const documents = require('./documents/documents.service.js');
+const pokUji = require('./pok-uji/pok-uji.service.js');
+const kodenaskah = require('./kodenaskah/kodenaskah.service.js');
+const teams = require('./teams/teams.service.js');
+const thumbnails = require('./thumbnails/thumbnails.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
   app.configure(events);
-  app.configure(articles);
   app.configure(posts);
   app.configure(postComments);
   app.configure(scores);
@@ -22,4 +25,9 @@ module.exports = function (app) {
   app.configure(uploadImagePost);
   app.configure(notifications);
   app.configure(onesignal);
+  app.configure(documents);
+  app.configure(pokUji);
+  app.configure(kodenaskah);
+  app.configure(teams);
+  app.configure(thumbnails);
 };

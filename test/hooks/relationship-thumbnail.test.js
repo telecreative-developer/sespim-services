@@ -1,8 +1,8 @@
 const assert = require('assert');
 const feathers = require('@feathersjs/feathers');
-const relationshipArticles = require('../../src/hooks/relationship-articles');
+const relationshipThumbnail = require('../../src/hooks/relationship-thumbnail');
 
-describe('\'relationship-articles\' hook', () => {
+describe('\'relationship-thumbnail\' hook', () => {
   let app;
 
   beforeEach(() => {
@@ -15,7 +15,7 @@ describe('\'relationship-articles\' hook', () => {
     });
 
     app.service('dummy').hooks({
-      before: relationshipArticles()
+      before: relationshipThumbnail()
     });
   });
 

@@ -5,14 +5,14 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const posts = sequelizeClient.define('posts', {
-    post_id: {
+  const teams = sequelizeClient.define('teams', {
+    team_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    post: {
-      type: DataTypes.STRING,
+    team: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     id: {
@@ -28,11 +28,10 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  posts.associate = function (models) {
+  teams.associate = function (models) {
     // Define associations here
-    posts.hasMany(models.users, {foreignKey: 'id', sourceKey: 'id'});
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return posts;
+  return teams;
 };

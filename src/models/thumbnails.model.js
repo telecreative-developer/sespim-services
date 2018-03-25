@@ -5,17 +5,17 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const posts = sequelizeClient.define('posts', {
-    post_id: {
+  const thumbnails = sequelizeClient.define('thumbnails', {
+    thumbnail_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    post: {
+    thumbnail_url: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    id: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
@@ -28,11 +28,11 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  posts.associate = function (models) {
+  thumbnails.associate = function (models) {
     // Define associations here
-    posts.hasMany(models.users, {foreignKey: 'id', sourceKey: 'id'});
+    thumbnails.hasMany(models.posts, {foreignKey: 'post_id', sourceKey: 'post_id'});
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return posts;
+  return thumbnails;
 };

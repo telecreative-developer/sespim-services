@@ -5,18 +5,26 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const posts = sequelizeClient.define('posts', {
-    post_id: {
+  const documents = sequelizeClient.define('documents', {
+    document_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    post: {
+    document_title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
-    id: {
-      type: DataTypes.INTEGER,
+    document_url: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    document_type: {
+      type: DataTypes.ENUM('standar-kompetensi', 'data-serdik', 'handbook'),
+      allowNull: true
+    },
+    admin_id: {
+      type: DataTypes.STRING,
       allowNull: false
     }
   }, {
@@ -28,11 +36,10 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  posts.associate = function (models) {
+  documents.associate = function (models) {
     // Define associations here
-    posts.hasMany(models.users, {foreignKey: 'id', sourceKey: 'id'});
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return posts;
+  return documents;
 };

@@ -5,27 +5,23 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const articles = sequelizeClient.define('articles', {
-    article_id: {
+  const pokUji = sequelizeClient.define('pok_uji', {
+    pok_uji_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: true
+    pok_uji: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-    content: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    no_urut: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-    file_url: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
-    admin_id: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    kode_naskah_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {
     hooks: {
@@ -36,11 +32,11 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  articles.associate = function (models) {
+  pokUji.associate = function (models) {
     // Define associations here
-    articles.hasMany(models.admin, {foreignKey: 'admin_id', sourceKey: 'admin_id'});
+    pokUji.hasMany(models.kodenaskah, {foreignKey: 'kode_naskah_id', sourceKey: 'kode_naskah_id'});
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return articles;
+  return pokUji;
 };
