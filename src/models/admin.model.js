@@ -19,7 +19,7 @@ module.exports = function (app) {
       type: DataTypes.STRING,
       allowNull: true
     },
-    email: {
+    username: {
       type: DataTypes.STRING,
       allowNull: true
     },
