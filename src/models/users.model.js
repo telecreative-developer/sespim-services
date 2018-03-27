@@ -6,6 +6,14 @@ const DataTypes = Sequelize.DataTypes;
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const users = sequelizeClient.define('users', {
+    no_serdik: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    nrp: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -45,7 +53,11 @@ module.exports = function (app) {
     force_of: {
       type: DataTypes.INTEGER,
       allowNull: true
-    }
+    },
+    verified: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
   }, {
     hooks: {
       beforeCount(options) {
