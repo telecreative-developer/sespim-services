@@ -19,7 +19,15 @@ module.exports = function (app) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    kode_naskah_id: {
+    force_of: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    hidden: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
@@ -34,7 +42,7 @@ module.exports = function (app) {
   // eslint-disable-next-line no-unused-vars
   pokUji.associate = function (models) {
     // Define associations here
-    pokUji.hasMany(models.kodenaskah, {foreignKey: 'kode_naskah_id', sourceKey: 'kode_naskah_id'});
+    pokUji.hasMany(models.users, {foreignKey: 'id', sourceKey: 'id'});
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 

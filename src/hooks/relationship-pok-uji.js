@@ -8,7 +8,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
     hook.params.sequelize = {
       raw: false,
       include: [
-        hook.app.services.kodenaskah.Model
+        hook.app.services.users.Model
       ]
     };
     return Promise.resolve(hook);

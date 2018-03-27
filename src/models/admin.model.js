@@ -11,7 +11,7 @@ module.exports = function (app) {
       primaryKey: true,
       autoIncrement: true
     },
-    firt_name: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: true
     },
