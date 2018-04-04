@@ -5,25 +5,17 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const documents = sequelizeClient.define('documents', {
-    document_id: {
+  const banners = sequelizeClient.define('banners', {
+    banner_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    document_title: {
-      type: DataTypes.STRING,
-      allowNull: true
+    banner_url: {
+      type: DataTypes.TEXT,
+      allowNull: false
     },
-    document_url: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    document_type: {
-      type: DataTypes.ENUM('standar-kompetensi', 'data-serdik', 'handbook', 'info-sespimmen'),
-      allowNull: true
-    },
-    admin_id: {
+    banner_loc: {
       type: DataTypes.STRING,
       allowNull: false
     }
@@ -36,10 +28,10 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  documents.associate = function (models) {
+  banners.associate = function (models) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return documents;
+  return banners;
 };
