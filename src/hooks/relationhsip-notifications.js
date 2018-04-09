@@ -11,7 +11,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         hook.app.services.users.Model,
         hook.app.services.posts.Model,
         hook.app.services.events.Model,
-        hook.app.services.scores.Model
+        hook.app.services.announcements.Model
       ]
     };
     return Promise.resolve(hook);
