@@ -31,7 +31,7 @@ module.exports = function (app) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    score_id: {
+    announcement_id: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
@@ -53,7 +53,7 @@ module.exports = function (app) {
     notifications.hasMany(models.users, {foreignKey: 'id', sourceKey: 'id'});
     notifications.hasMany(models.posts, {foreignKey: 'post_id', sourceKey: 'post_id'});
     notifications.hasMany(models.events, {foreignKey: 'event_id', sourceKey: 'event_id'});
-    notifications.hasMany(models.scores, {foreignKey: 'score_id', sourceKey: 'score_id'});
+    notifications.hasMany(models.announcements, {foreignKey: 'announcement_id', sourceKey: 'announcement_id'});
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
