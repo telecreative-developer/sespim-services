@@ -14,6 +14,7 @@ const kodenaskah = require('./kodenaskah/kodenaskah.service.js');
 const teams = require('./teams/teams.service.js');
 const thumbnails = require('./thumbnails/thumbnails.service.js');
 const banners = require('./banners/banners.service.js');
+const announcements = require('./announcements/announcements.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -32,4 +33,5 @@ module.exports = function (app) {
   app.configure(teams);
   app.configure(thumbnails);
   app.configure(banners);
+  app.configure(announcements);
 };
