@@ -38,6 +38,10 @@ module.exports = function (app) {
     kesehatan_loc: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     }
   }, {
     hooks: {
