@@ -11,8 +11,8 @@ module.exports = function (app) {
       primaryKey: true,
       autoIncrement: true
     },
-    akademik_title: {
-      type: DataTypes.TEXT,
+    title: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     akademik_url: {
@@ -23,19 +23,11 @@ module.exports = function (app) {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    kepribadian_title: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
     kepribadian_url: {
       type: DataTypes.TEXT,
       allowNull: false
     },
     kepribadian_loc: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    kesehatan_title: {
       type: DataTypes.TEXT,
       allowNull: false
     },
