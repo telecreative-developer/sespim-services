@@ -5,45 +5,21 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const scores = sequelizeClient.define('scores', {
-    score_id: {
+  const pokujiDocuments = sequelizeClient.define('pokuji_documents', {
+    pokuji_document_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    akademik_title: {
+    document_title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    document_url: {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    akademik_url: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    akademik_loc: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    kepribadian_title: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    kepribadian_url: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    kepribadian_loc: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    kesehatan_title: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    kesehatan_url: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    kesehatan_loc: {
+    document_loc: {
       type: DataTypes.TEXT,
       allowNull: false
     }
@@ -56,10 +32,10 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  scores.associate = function (models) {
+  pokujiDocuments.associate = function (models) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return scores;
+  return pokujiDocuments;
 };
