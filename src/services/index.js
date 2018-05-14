@@ -16,6 +16,7 @@ const thumbnails = require('./thumbnails/thumbnails.service.js');
 const banners = require('./banners/banners.service.js');
 const announcements = require('./announcements/announcements.service.js');
 const pokujiDocuments = require('./pokuji-documents/pokuji-documents.service.js');
+const academicCategories = require('./academic-categories/academic-categories.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -36,4 +37,5 @@ module.exports = function (app) {
   app.configure(banners);
   app.configure(announcements);
   app.configure(pokujiDocuments);
+  app.configure(academicCategories);
 };
