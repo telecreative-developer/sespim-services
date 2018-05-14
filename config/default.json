@@ -3,8 +3,8 @@
   "port": 3030,
   "public": "../public/",
   "paginate": {
-    "default": 10,
-    "max": 50
+    "default": 1000,
+    "max": 2000
   },
   "mysql": "mysql://mobile:toor@45.76.181.125:3306/sespim",
   "authentication": {
