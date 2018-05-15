@@ -5,14 +5,26 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const academicCategories = sequelizeClient.define('academic_categories', {
-    academic_category_id: {
+  const activitiesScores = sequelizeClient.define('activities_scores', {
+    activities_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    academic_title: {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    file_url: {
       type: DataTypes.TEXT,
+      allowNull: true
+    },
+    file_loc: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
       allowNull: true
     }
   }, {
@@ -23,10 +35,10 @@ module.exports = function (app) {
     }
   });
 
-  academicCategories.associate = function (models) { // eslint-disable-line no-unused-vars
+  activitiesScores.associate = function (models) { // eslint-disable-line no-unused-vars
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return academicCategories;
+  return activitiesScores;
 };

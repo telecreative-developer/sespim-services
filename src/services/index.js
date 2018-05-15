@@ -18,6 +18,10 @@ const announcements = require('./announcements/announcements.service.js');
 const pokujiDocuments = require('./pokuji-documents/pokuji-documents.service.js');
 const academicCategories = require('./academic-categories/academic-categories.service.js');
 const academicScores = require('./academic-scores/academic-scores.service.js');
+const activitiesScores = require('./activities-scores/activities-scores.service.js');
+const gabunganScores = require('./gabungan-scores/gabungan-scores.service.js');
+const healthScores = require('./health-scores/health-scores.service.js');
+const personalitiesScores = require('./personalities-scores/personalities-scores.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -40,4 +44,8 @@ module.exports = function (app) {
   app.configure(pokujiDocuments);
   app.configure(academicCategories);
   app.configure(academicScores);
+  app.configure(activitiesScores);
+  app.configure(gabunganScores);
+  app.configure(healthScores);
+  app.configure(personalitiesScores);
 };
