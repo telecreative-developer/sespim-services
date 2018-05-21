@@ -22,6 +22,10 @@ module.exports = function (app) {
     document_loc: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
     }
   }, {
     hooks: {
